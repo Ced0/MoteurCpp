@@ -4,7 +4,7 @@
 #include <iostream>
 #include "ThreadPool.h"
 #include "GameManager.h"
-#include "AsciiObject.h"
+#include "Player.h"
 #include "Scroller.h"
 
 int main()
@@ -14,15 +14,18 @@ int main()
 
     GameManager* game = GameManager::getInstance();
 
-    game->setScreen(glm::ivec2(50, 10));
+    game->setScreen(glm::ivec2(50, 20));
     game->createScreen(' ');
 
-    AsciiObject obj('c', glm::vec2(25, 1));
+    AsciiObject obj('x', glm::vec2(25, 0));
+
+    Player player('O', glm::vec2(5, 10));
 
     Scroller scroller;
 
     scroller.addObject(&obj);
 
+    game->addObject(&player);
     game->addUpdater(&scroller);
 
     while (game->getExit() == false)

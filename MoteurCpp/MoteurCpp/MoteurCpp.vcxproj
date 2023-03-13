@@ -156,6 +156,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="MoteurCpp.cpp" />
     <ClCompile Include="Node2D.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pos2D.cpp" />
     <ClCompile Include="Scroller.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Node2D.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Pos2D.h" />
     <ClInclude Include="Scroller.h" />
     <ClInclude Include="ThreadPool.h" />
