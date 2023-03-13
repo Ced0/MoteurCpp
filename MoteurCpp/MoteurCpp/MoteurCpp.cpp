@@ -2,9 +2,13 @@
 //
 
 #include <iostream>
+#include "ThreadPool.h"
 
 int main()
 {
+    ThreadPool* pool = ThreadPool::getInstance();
+    pool->start();
+
     std::cout << "Hello World!\n";
 }
 
