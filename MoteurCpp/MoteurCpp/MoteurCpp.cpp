@@ -4,26 +4,21 @@
 #include <iostream>
 #include "ThreadPool.h"
 #include "GameManager.h"
-#include <glm.hpp>
-#include "Node2D.h"
+#include "AsciiObject.h"
 
 int main()
 {
     ThreadPool* pool = ThreadPool::getInstance();
     pool->start();
 
-    GameManager::getInstance();
+    GameManager* game = GameManager::getInstance();
 
-    Node2D test;
+    game->setScreen(glm::ivec2(10, 10));
+    game->createScreen(' ');
 
-    Pos2D* comp = (Pos2D*) test.getComponent("Pos2D");
+    AsciiObject obj('c', glm::vec2(2, 1));
 
-    if (comp != NULL)
-    {
-        std::cout << comp->getType() << "\n";
-    }
-
-    std::cout << "Hello World!\n";
+    game->display();
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

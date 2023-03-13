@@ -149,6 +149,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AsciiComponent.cpp" />
+    <ClCompile Include="AsciiObject.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -158,6 +160,8 @@
     <ClCompile Include="ThreadPool.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AsciiComponent.h" />
+    <ClInclude Include="AsciiObject.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
