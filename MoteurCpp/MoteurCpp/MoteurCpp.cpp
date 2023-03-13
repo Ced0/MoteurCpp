@@ -5,6 +5,7 @@
 #include "ThreadPool.h"
 #include "GameManager.h"
 #include "AsciiObject.h"
+#include "Scroller.h"
 
 int main()
 {
@@ -13,12 +14,21 @@ int main()
 
     GameManager* game = GameManager::getInstance();
 
-    game->setScreen(glm::ivec2(10, 10));
+    game->setScreen(glm::ivec2(50, 10));
     game->createScreen(' ');
 
-    AsciiObject obj('c', glm::vec2(0, 1));
+    AsciiObject obj('c', glm::vec2(25, 1));
 
-    game->display();
+    Scroller scroller;
+
+    scroller.addObject(&obj);
+
+    game->addUpdater(&scroller);
+
+    while (game->getExit() == false)
+    {
+        game->update();
+    }
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

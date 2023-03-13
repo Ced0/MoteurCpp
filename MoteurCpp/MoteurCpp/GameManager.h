@@ -17,12 +17,17 @@ public:
     inline void setScreen(glm::ivec2 _screenSize) { screenSize = _screenSize; }
 
     void createScreen(char c);
+    void clearScreen();
 
     inline char getScreenValue(const glm::ivec2& pos) { return *getScreenCase(pos); }
-    inline void setScreenValue(const glm::ivec2& pos, char value) { *getScreenCase(pos) = value;}
+    inline void setScreenValue(const glm::ivec2& pos, char value) { 
+        char* p = getScreenCase(pos); if(p != NULL) *p = value;
+    }
 
     inline void addObject(GameObject* obj) { objects.push_back(obj); };
     inline void addUpdater(Updater* obj) { updaters.push_back(obj); };
+
+    inline bool getExit() { return exit; };
 
     void update();
 
@@ -35,7 +40,13 @@ private:
     static GameManager* singleton;
 
     inline char* getScreenCase(const glm::ivec2& pos) {
-        return (screen + pos.x * screenSize.y + pos.y);
+
+        if (pos.x < screenSize.x && pos.x >= 0 && pos.y < screenSize.y && pos.y >= 0)
+        {
+            return (screen + pos.x * screenSize.y + pos.y);
+        }
+        
+        return NULL;
     }
 
     std::vector<GameObject*> objects;
@@ -44,5 +55,8 @@ private:
 
     glm::ivec2 screenSize;
     char* screen = nullptr;
+    char defaultScreen;
+
+    bool exit = false;
 };
 
