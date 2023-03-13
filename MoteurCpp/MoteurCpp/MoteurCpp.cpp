@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "ThreadPool.h"
+#include "GameManager.h"
 #include <glm.hpp>
 #include "Node2D.h"
 
@@ -10,6 +11,8 @@ int main()
 {
     ThreadPool* pool = ThreadPool::getInstance();
     pool->start();
+
+    GameManager::getInstance();
 
     Node2D test;
 
