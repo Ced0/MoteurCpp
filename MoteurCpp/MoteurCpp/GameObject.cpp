@@ -20,3 +20,8 @@ Component* GameObject::getComponent(std::string type)
 
 	return NULL;
 }
+
+void GameObject::update(char a)
+{
+
+}

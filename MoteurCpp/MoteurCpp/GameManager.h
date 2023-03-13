@@ -1,6 +1,6 @@
 #pragma once
 #include <glm.hpp>
-
+#include "Updater.h"
 
 class GameManager
 {
@@ -21,6 +21,11 @@ public:
     inline char getScreenValue(const glm::ivec2& pos) { return *getScreenCase(pos); }
     inline void setScreenValue(const glm::ivec2& pos, char value) { *getScreenCase(pos) = value;}
 
+    inline void addObject(GameObject* obj) { objects.push_back(obj); };
+    inline void addUpdater(Updater* obj) { updaters.push_back(obj); };
+
+    void update();
+
 protected:
     GameManager() {};
 
@@ -30,8 +35,12 @@ private:
     static GameManager* singleton;
 
     inline char* getScreenCase(const glm::ivec2& pos) {
-        return screen + pos.x * screenSize.y + pos.y;
+        return (screen + pos.x * screenSize.y + pos.y);
     }
+
+    std::vector<GameObject*> objects;
+
+    std::vector<Updater*> updaters;
 
     glm::ivec2 screenSize;
     char* screen = nullptr;

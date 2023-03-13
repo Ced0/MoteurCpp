@@ -16,7 +16,7 @@ int main()
     game->setScreen(glm::ivec2(10, 10));
     game->createScreen(' ');
 
-    AsciiObject obj('c', glm::vec2(2, 1));
+    AsciiObject obj('c', glm::vec2(0, 1));
 
     game->display();
 }
