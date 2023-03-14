@@ -7,6 +7,11 @@
 
 GameManager* GameManager::singleton = nullptr;
 
+GameManager::GameManager() 
+{
+    gameObjectManager = GameObjectManager::getInstance(200);
+}
+
 GameManager* GameManager::getInstance()
 {
     if (singleton == nullptr) {
@@ -29,6 +34,7 @@ GameManager::~GameManager()
     }
 
     delete screen;
+    delete gameObjectManager;
 }
 
 

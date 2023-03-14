@@ -21,6 +21,17 @@ Component* GameObject::getComponent(std::string type)
 	return NULL;
 }
 
+void GameObject::addComponent(Component* componentAdded)
+{
+	for (auto& const component : components)
+	{
+		if (component->getType() == componentAdded->getType())
+			return;
+	}
+
+	components.push_back(componentAdded);
+}
+
 void GameObject::update(char a)
 {
 

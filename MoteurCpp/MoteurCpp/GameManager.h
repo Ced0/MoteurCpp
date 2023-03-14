@@ -1,5 +1,6 @@
 #pragma once
 #include <glm.hpp>
+#include "GameObjectManager.h"
 #include "Updater.h"
 
 class GameManager
@@ -30,8 +31,10 @@ public:
 
     void update();
 
+    GameObjectManager* gameObjectManager;
+
 protected:
-    GameManager() {};
+    GameManager();;
 
     ~GameManager();
 
