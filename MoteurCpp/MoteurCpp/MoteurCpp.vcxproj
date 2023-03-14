@@ -162,7 +162,6 @@
     <ClCompile Include="AsciiObject.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="MoteurCpp.cpp" />
     <ClCompile Include="Node2D.cpp" />
     <ClCompile Include="ObstacleSpawner.cpp" />

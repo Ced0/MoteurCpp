@@ -9,7 +9,7 @@ GameManager* GameManager::singleton = nullptr;
 
 GameManager::GameManager()
 {
-    gameObjectManager = GameObjectManager::getInstance(200);
+    gameObjectManager = GameObjectManager<GameObject>::getInstance(200);
 }
 
 GameManager* GameManager::getInstance()
@@ -34,7 +34,6 @@ GameManager::~GameManager()
     }
 
     delete screen;
-    delete gameObjectManager;
 }
 
 
@@ -82,7 +81,7 @@ void GameManager::update()
 
     char input = 0;
 
-    Sleep(500);
+    Sleep(50);
 
     if (_kbhit() != 0)
     {

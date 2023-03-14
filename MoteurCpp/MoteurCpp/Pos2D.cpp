@@ -2,5 +2,5 @@
 
 Pos2D::Pos2D()
 {
-	type = "Pos2D";
+	//type = "Pos2D";
 }

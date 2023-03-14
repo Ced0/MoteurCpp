@@ -3,7 +3,7 @@
 
 AsciiComponent::AsciiComponent(char _c, glm::vec2 _pos)
 {
-	type = "AsciiComponent";
+	//type = "AsciiComponent";
 
 	c = _c;
 	pos = _pos;

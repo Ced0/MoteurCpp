@@ -13,6 +13,7 @@ public:
 	void destroyGameObject(const int id);
 	void addComponent(const int id, T* component);
 	void defragmentation();
+
 private:
 	GameObjectManager(const uint32_t& poolSize);
 	GameObjectManager(const GameObjectManager& other) = delete;
@@ -37,7 +38,7 @@ GameObjectManager<T>* GameObjectManager<T>::getInstance(const uint32_t poolSize)
 template<typename T>
 GameObjectManager<T>::GameObjectManager(const uint32_t& poolSize)
 {
-	poolGameObjects = std::vector<GameObject*>(poolSize, nullptr);
+	poolGameObjects = std::vector<T*>(poolSize, nullptr);
 	idPoolGameObjects = std::vector<int>(poolSize, -1);
 	garbageCounter = 0;
 	idxFreePool = 0;
@@ -73,11 +74,9 @@ int GameObjectManager<T>::getNewGameObject()
 	if (idxFreePool >= poolGameObjects.size() || idxFreeId >= idPoolGameObjects.size())
 		return -1;
 
-	poolGameObjects[idxFreePool] = new GameObject();
+	poolGameObjects[idxFreePool] = new T();
 	idPoolGameObjects[idxFreeId] = idxFreePool;
 	return idxFreeId;
-
-	poolGameObjects
 }
 
 template<typename T>
