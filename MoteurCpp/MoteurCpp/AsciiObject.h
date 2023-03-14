@@ -7,5 +7,7 @@ class AsciiObject :
 {
 public:
     AsciiObject(char c, glm::vec2 pos = glm::vec2());
+
+    virtual void update(char input);
 };
 

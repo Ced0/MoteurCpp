@@ -21,5 +21,13 @@ void Player::update(char a)
 
 	GameManager* manager = GameManager::getInstance();
 
-	manager->setScreenValue(comp->pos, comp->c);
+	if (manager->getScreenValue(comp->pos) == 'X')
+	{
+		manager->gameOver();
+	}
+	else {
+		manager->setScreenValue(comp->pos, comp->c);
+	}
+
+	
 }

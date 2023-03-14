@@ -20,13 +20,12 @@ public:
     void clearScreen();
 
     inline char getScreenValue(const glm::ivec2& pos) { return *getScreenCase(pos); }
-    inline void setScreenValue(const glm::ivec2& pos, char value) { 
-        char* p = getScreenCase(pos); if(p != NULL) *p = value;
-    }
+    bool setScreenValue(const glm::ivec2& pos, char value);
 
     inline void addObject(GameObject* obj) { objects.push_back(obj); };
     inline void addUpdater(Updater* obj) { updaters.push_back(obj); };
 
+    inline void gameOver() { exit = true; };
     inline bool getExit() { return exit; };
 
     void update();

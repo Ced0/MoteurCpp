@@ -86,15 +86,26 @@ void GameManager::update()
 
     clearScreen();
 
-    for (int i = 0; i < objects.size(); i++)
-    {
-        objects[i]->update(input);
-    }
-
     for (int i = 0; i < updaters.size(); i++)
     {
         updaters[i]->update(input);
     }
 
-    //for()
+    for (int i = 0; i < objects.size(); i++)
+    {
+        if(objects[i]->active == true) objects[i]->update(input);
+    }
+}
+
+bool GameManager::setScreenValue(const glm::ivec2& pos, char value)
+{
+    char* p = getScreenCase(pos); 
+
+    if (p != NULL)
+    {
+        *p = value;
+        return true;
+    }
+
+    return false;
 }

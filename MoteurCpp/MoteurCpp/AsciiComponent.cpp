@@ -10,3 +10,6 @@ AsciiComponent::AsciiComponent(char _c, glm::vec2 _pos)
 
 	GameManager::getInstance()->setScreenValue(pos, c);
 }
+
+
+
