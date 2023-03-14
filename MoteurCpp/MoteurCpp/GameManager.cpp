@@ -7,7 +7,7 @@
 
 GameManager* GameManager::singleton = nullptr;
 
-GameManager::GameManager() 
+GameManager::GameManager()
 {
     gameObjectManager = GameObjectManager::getInstance(200);
 }
