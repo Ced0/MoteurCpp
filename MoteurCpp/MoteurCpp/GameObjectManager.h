@@ -8,16 +8,18 @@ class GameObjectManager
 {
 public:
 	static GameObjectManager* getInstance(const uint32_t poolSize);
-	~GameObjectManager();
-
+	
 	int getNewGameObject();
 	void destroyGameObject(const int id);
 	void addComponent(const int id, T* component);
 	void defragmentation();
 
 private:
+	~GameObjectManager();
+
 	GameObjectManager(const uint32_t& poolSize);
 	GameObjectManager(const GameObjectManager& other) = delete;
+	void operator=(const GameObjectManager&) = delete;
 
 	std::vector<T*> poolGameObjects;
 	std::vector<int> idPoolGameObjects;
