@@ -170,6 +170,7 @@
     <ClCompile Include="Scroller.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
     <ClCompile Include="TransformComponent.cpp" />
+    <ClCompile Include="TransformUpdater.cpp" />
     <ClCompile Include="Updater.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
@@ -189,6 +190,7 @@
     <ClInclude Include="Scroller.h" />
     <ClInclude Include="ThreadPool.h" />
     <ClInclude Include="TransformComponent.h" />
+    <ClInclude Include="TransformUpdater.h" />
     <ClInclude Include="Updater.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

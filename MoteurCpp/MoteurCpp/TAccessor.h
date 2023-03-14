@@ -21,6 +21,8 @@ public:
 
 	T tryGetComponent(int id);
 
+	int getComponentsSize();
+
 	void Add(T component);
 
 	void Remove(T component);
@@ -42,6 +44,13 @@ inline T TAccessor<T>::tryGetComponent(int id)
 		if (components[i].getId() == id)
 			return components[i];
 	}
+	return NULL;
+}
+
+template<typename T>
+inline int TAccessor<T>::getComponentsSize()
+{
+	return components.size();
 }
 
 template<typename T>

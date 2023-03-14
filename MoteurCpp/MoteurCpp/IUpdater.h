@@ -4,7 +4,7 @@
 class IUpdater
 {
 public:
-	IUpdater() {};
+	IUpdater();
 
 	virtual ~IUpdater() = 0;
 
