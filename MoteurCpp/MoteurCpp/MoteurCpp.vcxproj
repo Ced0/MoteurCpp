@@ -156,11 +156,13 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="MoteurCpp.cpp" />
     <ClCompile Include="Node2D.cpp" />
+    <ClCompile Include="ObstacleSpawner.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pos2D.cpp" />
     <ClCompile Include="Scroller.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
     <ClCompile Include="Updater.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AsciiComponent.h" />
@@ -169,11 +171,13 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Node2D.h" />
+    <ClInclude Include="ObstacleSpawner.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Pos2D.h" />
     <ClInclude Include="Scroller.h" />
     <ClInclude Include="ThreadPool.h" />
     <ClInclude Include="Updater.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

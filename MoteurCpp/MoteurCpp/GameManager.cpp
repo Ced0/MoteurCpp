@@ -83,7 +83,7 @@ void GameManager::update()
         input = _getch();
         fflush(stdin);
     }
-
+    
     clearScreen();
 
     for (int i = 0; i < updaters.size(); i++)
