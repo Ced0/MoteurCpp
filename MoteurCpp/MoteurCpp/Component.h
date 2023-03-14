@@ -3,12 +3,13 @@
 
 class Component
 {
+	unsigned int id;
+
 public:
-	virtual ~Component();
 
-	inline std::string getType() { return type; };
+	int getId();
 
-protected:
-	std::string type = "none";
+	bool operator== (const Component& other) const;
+	
 };
 

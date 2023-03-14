@@ -1,6 +1,11 @@
 #include "Component.h"
 
-Component::~Component()
+int Component::getId()
 {
+	return this->id;
+}
 
+bool Component::operator==(const Component& other) const
+{
+	return this->id == other.id;
 }
