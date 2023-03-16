@@ -52,17 +52,21 @@ void GameManager::display()
 
     //std::cout << "update \n\n\n";
 
+    std::string toDisplay = "";
+
     for (int cpt = (screenSize.y - 1); cpt >= 0; cpt--)
     {
         for (int i = 0; i < screenSize.x; i++)//Affichage
         {
 
-            std::cout << getScreenValue(glm::ivec2(i, cpt));
+            toDisplay += getScreenValue(glm::ivec2(i, cpt));
 
         }
 
-        printf("\n");
+        toDisplay += "\n";
     }
+
+    std::cout << toDisplay;
 }
 
 void GameManager::createScreen(char c) 
