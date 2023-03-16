@@ -60,9 +60,6 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="IUpdater.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="TransformComponent.cpp">
       <Filter>Fichiers sources\Components</Filter>
     </ClCompile>
@@ -74,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="TransformUpdater.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="IUpdater.cpp">
+      <Filter>Fichiers sources\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

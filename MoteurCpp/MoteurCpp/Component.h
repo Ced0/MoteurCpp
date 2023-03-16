@@ -9,6 +9,7 @@ private:
 	unsigned int gameObjectId;
 
 public:
+	Component();
 
 	Component(unsigned int goId);
 

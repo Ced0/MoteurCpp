@@ -44,9 +44,11 @@ int main()
     game->addUpdater(&scroller);
     game->addUpdater(&spawner);
 
+    game->start();
+
     while (game->getExit() == false)
     {
-        game->update();
+        game->readInputs();
     }
 
     std::cout << "\nGame over\n";

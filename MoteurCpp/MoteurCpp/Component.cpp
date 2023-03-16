@@ -2,6 +2,9 @@
 
 unsigned int Component::index = 0;
 
+Component::Component()
+{}
+
 Component::Component(unsigned int goId)
 {
 	this->id = index++;

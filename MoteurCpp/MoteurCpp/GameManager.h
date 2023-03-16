@@ -3,6 +3,7 @@
 #include "GameObjectManager.h"
 #include "GameObject.h"
 #include "Updater.h"
+#include <mutex>
 
 class GameManager
 {
@@ -14,6 +15,7 @@ public:
     //Default values are set in the getInstance
     static GameManager* getInstance();
 
+    void start();
     void display();
 
     inline void setScreen(glm::ivec2 _screenSize) { screenSize = _screenSize; }
@@ -30,6 +32,8 @@ public:
     inline void gameOver() { exit = true; };
     inline bool getExit() { return exit; };
 
+    void readInputs();
+    void updateThread();
     void update();
 
     GameObjectManager<GameObject>* gameObjectManager;
@@ -61,5 +65,8 @@ private:
     char defaultScreen;
 
     bool exit = false;
+
+    char input = 0;
+    std::mutex inputMtx;
 };
 

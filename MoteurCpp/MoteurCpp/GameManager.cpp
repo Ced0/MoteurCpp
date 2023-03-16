@@ -4,12 +4,21 @@
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
+#include "ThreadPool.h"
 
 GameManager* GameManager::singleton = nullptr;
 
 GameManager::GameManager()
 {
     gameObjectManager = GameObjectManager<GameObject>::getInstance(200);
+}
+
+void GameManager::start()
+{
+    update();
+
+    ThreadPool* pool = ThreadPool::getInstance();
+    pool->queueJob(&GameManager::updateThread, this);
 }
 
 GameManager* GameManager::getInstance()
@@ -75,31 +84,46 @@ void GameManager::clearScreen()
     }
 }
 
-void GameManager::update()
+void GameManager::readInputs()
 {
-    display();
-
-    char input = 0;
-
-    Sleep(50);
-
     if (_kbhit() != 0)
     {
+        inputMtx.lock();
         input = _getch();
+        inputMtx.unlock();
         fflush(stdin);
     }
-    
+}
+
+void GameManager::updateThread()
+{
+    while (exit == false)
+    {
+        Sleep(50);
+        update();
+    }
+}
+
+void GameManager::update()
+{
+    inputMtx.lock();
+    char cpyInput = input;
+    input = 0;
+    inputMtx.unlock();
+
     clearScreen();
 
     for (int i = 0; i < updaters.size(); i++)
     {
-        updaters[i]->update(input);
+        updaters[i]->update(cpyInput);
     }
 
     for (int i = 0; i < objects.size(); i++)
     {
-        if(objects[i]->active == true) objects[i]->update(input);
+        if (objects[i]->active == true) objects[i]->update(cpyInput);
     }
+
+    display();
 }
 
 bool GameManager::setScreenValue(const glm::ivec2& pos, char value)
