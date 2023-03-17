@@ -27,7 +27,9 @@ public:
 
 	void Add(T component);
 
-	void Remove(T component);
+	void remove(T component);
+
+	void remove(int id);
 	
 };
 
@@ -68,7 +70,7 @@ inline void TAccessor<T>::Add(T component)
 }
 
 template<typename T>
-inline void TAccessor<T>::Remove(T component)
+inline void TAccessor<T>::remove(T component)
 {
 	for (int i = 0; i < components.size(); i++)
 	{
@@ -77,5 +79,15 @@ inline void TAccessor<T>::Remove(T component)
 			components[i].~T();
 			break;
 		}
+	}
+}
+
+template<typename T>
+inline void TAccessor<T>::remove(int id)
+{
+	for (int i = 0; i < components.size(); i++)
+	{
+		if (components[i].getId() == id)
+			components[i].~T();
 	}
 }
