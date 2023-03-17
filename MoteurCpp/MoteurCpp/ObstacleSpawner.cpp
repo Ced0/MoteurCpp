@@ -4,7 +4,7 @@
 
 void ObstacleSpawner::update(char input)
 {
-	int toSpawn = randInt(0, spawnMax);
+	int toSpawn = randInt(spawnMin, spawnMax);
 
     int cpt = 0;
     for (int i = 0; i < objects.size() && cpt < toSpawn; i++)

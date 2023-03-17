@@ -8,5 +8,6 @@ public:
 
 protected:
     int spawnMax = 4;
+    int spawnMin = 1;
 };
 
