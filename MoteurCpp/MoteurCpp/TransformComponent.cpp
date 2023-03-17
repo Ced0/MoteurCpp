@@ -9,7 +9,7 @@ TransformComponent::TransformComponent() : Component()
     TAccessor<TransformComponent>::Instance()->Add(*this);
 }
 
-TransformComponent::TransformComponent(float positionX, float positionY, float rotation, float scaleX, float scaleY)
+TransformComponent::TransformComponent(float positionX, float positionY, float rotation, float scaleX, float scaleY) : Component()
 {
     this->position = glm::vec2(positionX, positionY);
     this->rotation = rotation;

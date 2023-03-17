@@ -13,8 +13,7 @@ void SpawnerUpdater::update()
 	TAccessor<RenderComponent>* renders = TAccessor<RenderComponent>::Instance();
 	TAccessor<TransformComponent>* transforms = TAccessor<TransformComponent>::Instance();
 
-	int cpt = 0;
-	for (int i = 0; i < transforms->getComponentsSize() && cpt < quantity; i++)
+	for (int i = 0; i < quantity; i++)
 	{
 		for (unsigned int j = 0; j < renders->getComponentsSize(); j++)
 		{
@@ -30,6 +29,5 @@ void SpawnerUpdater::update()
 				renderComponent->setIsActive(true);
 			}
 		}
-		cpt++;
 	}
 }
