@@ -5,6 +5,14 @@
 #include "Updater.h"
 #include <mutex>
 
+#define POOL_SIZE 1500
+
+#ifdef _DEBUG // for unitary test
+#include <stdlib.h>
+#include <time.h>
+#define MAX_RANDOM(X) rand() % X
+#endif // _DEBUG
+
 class GameManager
 {
 public:
@@ -40,7 +48,9 @@ public:
     void updateThread();
     void update();
 
-    GameObjectManager<GameObject>* gameObjectManager;
+    void unitaryTest();
+
+    GameObjectManager* gameObjectManager;
 
 protected:
     GameManager();;
@@ -48,6 +58,9 @@ protected:
     ~GameManager();
 
 private:
+
+    void gameObjectManagerUnitaryTest(uint32_t iteration);
+
     static GameManager* singleton;
 
     inline char* getScreenCase(const glm::ivec2& pos) {

@@ -19,15 +19,15 @@
     <Filter Include="Fichiers sources\Components">
       <UniqueIdentifier>{f8761a4c-515d-4d27-83fe-86118873c02f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\GameObject">
+      <UniqueIdentifier>{88111863-76b2-4651-afb4-50d63ffbaef7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MoteurCpp.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="ThreadPool.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Pos2D.cpp">
@@ -60,6 +60,9 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="IUpdater.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
     <ClCompile Include="TransformComponent.cpp">
       <Filter>Fichiers sources\Components</Filter>
     </ClCompile>
@@ -72,8 +75,11 @@
     <ClCompile Include="TransformUpdater.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="IUpdater.cpp">
-      <Filter>Fichiers sources\Components</Filter>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Fichiers sources\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManager.cpp">
+      <Filter>Fichiers sources\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="TransformUpdater.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentEnum.h">
+      <Filter>Fichiers sources\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ GameManager* GameManager::singleton = nullptr;
 
 GameManager::GameManager()
 {
-    gameObjectManager = GameObjectManager<GameObject>::getInstance(200);
+    gameObjectManager = GameObjectManager::getInstance(POOL_SIZE);
 }
 
 void GameManager::start()
@@ -44,7 +44,6 @@ GameManager::~GameManager()
 
     delete screen;
 }
-
 
 void GameManager::display()
 {
@@ -145,7 +144,95 @@ bool GameManager::setScreenValue(const glm::ivec2& pos, char value)
     return false;
 }
 
-void GameManager::addScore(int value)
+void GameManager::unitaryTest()
 {
-    score += value;
+	srand(time(NULL));
+    gameObjectManagerUnitaryTest(20);
+}
+
+void GameManager::gameObjectManagerUnitaryTest(uint32_t iteration)
+{
+	int gameObjectId[POOL_SIZE];
+    int gameObjectDoublon[POOL_SIZE];
+
+    for (int i = 0; i < POOL_SIZE; i++)
+    {
+        gameObjectId[i] = -1;
+        gameObjectDoublon[i] = 0;
+    }
+
+    for (int i = 0; i < iteration; i++)
+    {
+        std::cout << "! allocation !" << std::endl;
+        for (int j = 0; j < POOL_SIZE; j++)
+        {
+            if (gameObjectId[j] == -1)
+            {
+                gameObjectId[j] = gameObjectManager->allocateGameObject();
+            }
+            std::cout << gameObjectId[j] << ", ";
+        }
+        std::cout << std::endl;
+
+        std::cout << "! deallocation !" << std::endl;
+        for (int j = 0; j < POOL_SIZE; j++)
+        {
+            auto resultRandom = MAX_RANDOM(POOL_SIZE);
+            if (j < POOL_SIZE - 1)
+                gameObjectId[resultRandom] = gameObjectManager->deallocateGameObject(gameObjectId[resultRandom], false);
+            else
+                gameObjectId[resultRandom] = gameObjectManager->deallocateGameObject(gameObjectId[resultRandom], true);
+        }
+
+        for (int j = 0; j < POOL_SIZE; j++)
+        {
+            std::cout << gameObjectId[j] << ", ";
+        }
+        std::cout << std::endl;
+
+        //for (int i = 0; i < POOL_SIZE; i++)
+        //{
+        //    auto idx = gameObjectId[i];
+        //    if (idx >= 0)
+        //        gameObjectDoublon[idx] += 1;
+        //}
+
+        for (int i = 0; i < POOL_SIZE; i++)
+        {
+            if (gameObjectDoublon[i] > 1)
+            {
+                std::cout << "???" << std::endl;
+            }
+            //gameObjectDoublon[i] = 0;
+        }
+        std::cout << std::endl;
+    }
+
+    for (int i = 0; i < POOL_SIZE; i++)
+    {
+        auto idx = gameObjectId[i];
+        if (idx >= 0)
+            gameObjectDoublon[idx] += 1;
+    }
+
+    std::cout << "final result : " << std::endl;
+    for (int i = 0; i < POOL_SIZE; i++)
+    {
+        std::cout << gameObjectId[i] << ", ";
+    }
+    std::cout << std::endl;
+
+    bool isDoublon = false;
+    std::cout << "check doublon : " << std::endl;
+    for (int i = 0; i < POOL_SIZE; i++)
+    {
+        if (gameObjectDoublon[i] > 1)
+        {
+            isDoublon = true;
+            std::cout << "idx game object : " << i;
+            std::cout << " value : " << gameObjectDoublon[i] << std::endl;
+        }
+    }
+    if (!isDoublon)
+        std::cout << "no doublon" << std::endl;
 }
