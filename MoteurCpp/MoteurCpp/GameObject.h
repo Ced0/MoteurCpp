@@ -7,13 +7,15 @@ class GameObject
 {
 public:
 
+	GameObject();
 	~GameObject();
 
-	Component* getComponent(std::string type);
-	void addComponent(Component* componentAdded);
+	bool hasComponent(const ComponentEnum componentType);
+	void addComponent(const ComponentEnum componentType, const int componentId);
+	void removeComponent(const int componentId);
 	virtual void update(char a);
 
-	std::vector<Component*> components;
+	std::vector<std::pair<ComponentEnum, int>> components;
 	bool active = false;
 };
 

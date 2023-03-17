@@ -69,7 +69,7 @@ private:
         {
             return (screen + pos.x * screenSize.y + pos.y);
         }
-        
+
         return NULL;
     }
 

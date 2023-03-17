@@ -1,10 +1,13 @@
 #include "GameManager.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
+
 #include "ThreadPool.h"
+#include "GameObjectEnum.h"
 
 GameManager* GameManager::singleton = nullptr;
 
