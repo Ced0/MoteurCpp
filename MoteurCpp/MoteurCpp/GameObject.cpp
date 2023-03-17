@@ -24,13 +24,13 @@ void GameObject::addComponent(const ComponentEnum componentType, const int compo
 	components.push_back(std::make_pair(componentType, componentId));
 }
 
-void GameObject::removeComponent(const int componentId)
+void GameObject::removeComponent(const ComponentEnum componentType)
 {
 	int i = 0;
 
 	for (int idx = 0; i < components.size(); ++i)
 	{
-		if (components[i].second == componentId)
+		if (components[i].first == componentType)
 		{
 			components.erase(components.begin() + idx);
 			return;

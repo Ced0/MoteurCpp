@@ -2,5 +2,5 @@
 
 Node2D::Node2D()
 {
-	components.push_back(new Pos2D());
+	//components.push_back(new Pos2D());
 }

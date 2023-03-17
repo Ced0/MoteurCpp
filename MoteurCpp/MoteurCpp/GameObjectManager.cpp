@@ -98,5 +98,9 @@ int GameObjectManager::addComponent(const int id,const ComponentEnum componentTy
 
 int GameObjectManager::removeComponent(const int id, ComponentEnum enumComponent)
 {
+	if (id >= poolGameObjects.size() || id < 0)
+		return EXIT_FAILURE;
 
+	GameObject gameObject = poolGameObjects[id];
+	gameObject.removeComponent(enumComponent);
 }
