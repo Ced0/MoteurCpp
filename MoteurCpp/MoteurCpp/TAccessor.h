@@ -8,12 +8,11 @@ template<typename T>
 class TAccessor
 {
 private:
-	static TAccessor<T> singleton;
 	std::vector<T> components;
 
 	TAccessor<T>()
 	{
-		components = std::vector<T>(MAX_COMPONENT);
+		//components = std::vector<T>(MAX_COMPONENT)
 	}
 
 public:
@@ -34,10 +33,10 @@ public:
 };
 
 template<typename T>
-inline TAccessor<T>* TAccessor<T>::Instance()
+TAccessor<T>* TAccessor<T>::Instance()
 {
-	static TAccessor<T> singleton = TAccessor<T>();
-	return &singleton;
+	static TAccessor<T>* singleton = new TAccessor<T>();
+	return singleton;
 }
 
 template<typename T>
