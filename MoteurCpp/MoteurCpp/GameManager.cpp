@@ -6,8 +6,6 @@
 #include <conio.h>
 #include "ThreadPool.h"
 
-using namespace std;
-
 GameManager* GameManager::singleton = nullptr;
 
 GameManager::GameManager()
@@ -54,10 +52,7 @@ void GameManager::display()
 
     //std::cout << "update \n\n\n";
 
-<<<<<<< Updated upstream
     std::string toDisplay = "";
-=======
->>>>>>> Stashed changes
 
     for (int cpt = (screenSize.y - 1); cpt >= 0; cpt--)
     {
@@ -74,16 +69,10 @@ void GameManager::display()
     std::cout << toDisplay;
 }
 
-void GameManager::scoreDisplay()
-{
-    std::cout << "Score: " << myScore;
-    printf("\n");
-}
-
 void GameManager::createScreen(char c) 
 { 
     int size = screenSize.x * screenSize.y;
-    myScore = 0;
+
     screen = new char[size];
     defaultScreen = c;
     clearScreen();
@@ -101,17 +90,6 @@ void GameManager::clearScreen()
 
 void GameManager::readInputs()
 {
-<<<<<<< Updated upstream
-=======
-    scoreDisplay();
-
-    display();
-
-    char input = 0;
-
-    Sleep(50);
-
->>>>>>> Stashed changes
     if (_kbhit() != 0)
     {
         inputMtx.lock();
@@ -164,9 +142,3 @@ bool GameManager::setScreenValue(const glm::ivec2& pos, char value)
 
     return false;
 }
-
-int GameManager::AdditionScore(int bonus) {
-    myScore += bonus;
-}
-
-
