@@ -44,14 +44,15 @@ int main()
         game->addObject(obj);
 
         obj = new AsciiObject('o');
-        //bonus.addObject(obj);
+        bonus.addObject(obj);
     }
 
     Player player('O', glm::vec2(5, 10));
 
     game->addObject(&player);
     game->addUpdater(&scroller);
-    game->addUpdater(&spawner);
+    game->addUpdater(&spawner);    
+    game->addUpdater(&bonus);
 
     game->start();
 

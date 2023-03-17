@@ -93,7 +93,10 @@ int GameObjectManager::addComponent(const int id, ComponentEnum enumComponent, c
 	//gameObject.addComponent(component);
 
 	//return EXIT_SUCCESS;
+	return 0;
 }
 
 int GameObjectManager::removeComponent(const int id, ComponentEnum enumComponent)
-{}
+{
+	return 0;
+}
