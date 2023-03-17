@@ -53,6 +53,7 @@ int main()
     game->addUpdater(&scroller);
     game->addUpdater(&spawner);
 
+    player.active = true;
     game->start();
 
     while (game->getExit() == false)
