@@ -14,42 +14,8 @@ int main()
     ThreadPool* pool = ThreadPool::getInstance();
     pool->start();
     GameManager* game = GameManager::getInstance();
-
     game->setScreen(glm::ivec2(50, 20));
     game->createScreen(' ');
-
-    for (int i = 0; i < 50; i++)
-    {
-        //game->addObject(new AsciiObject('X', glm::vec2(i, 0)));
-        //game->addObject(new AsciiObject('X', glm::vec2(i, 19)));
-    }
-
-    ObstacleSpawner spawner;
-    BonusSpawner bonus;
-    Scroller scroller;
-
-    for (int i = 0; i < (50*5); i++)
-    {
-        AsciiObject* obj = new AsciiObject('X');
-
-        obj->active = false;
-
-        spawner.addObject(obj);
-        scroller.addObject(obj);
-        //game->addObject(obj);
-
-        obj = new AsciiObject('o');
-        bonus.addObject(obj);
-    }
-
-    Player player('O', glm::vec2(5, 10));
-
-    //game->addObject(&player);
-    game->addUpdater(&scroller);
-    game->addUpdater(&spawner);    
-    game->addUpdater(&bonus);
-
-    player.active = true;
     game->start();
 
     while (game->getExit() == false)

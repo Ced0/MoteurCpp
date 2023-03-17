@@ -14,8 +14,8 @@ public:
 
 	static PlayerUpdater* Instance()
 	{
-		static PlayerUpdater singleton = PlayerUpdater();
-		return &singleton;
+		static PlayerUpdater* singleton = new PlayerUpdater();
+		return singleton;
 	}
 
 	void update();

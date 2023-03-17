@@ -12,8 +12,8 @@ public:
 
 	static ScrollerUpdater* Instance()
 	{
-		static ScrollerUpdater singleton = ScrollerUpdater();
-		return &singleton;
+		static ScrollerUpdater* singleton = new ScrollerUpdater();
+		return singleton;
 	}
 
 	void update();

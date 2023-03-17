@@ -14,8 +14,8 @@ public:
 
 	static SpawnerUpdater* Instance()
 	{
-		static SpawnerUpdater singleton = SpawnerUpdater();
-		return &singleton;
+		static SpawnerUpdater* singleton = new SpawnerUpdater();
+		return singleton;
 	}
 
 	void update();

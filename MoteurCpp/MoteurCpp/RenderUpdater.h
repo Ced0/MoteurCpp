@@ -13,8 +13,8 @@ public:
 
 	static RenderUpdater* Instance()
 	{
-		static RenderUpdater singleton = RenderUpdater();
-		return &singleton;
+		static RenderUpdater* singleton = new RenderUpdater();
+		return singleton;
 	}
 
 	void update();
