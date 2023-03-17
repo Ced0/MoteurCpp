@@ -17,6 +17,9 @@ public:
 
     void start();
     void display();
+    void scoreDisplay();
+
+    void addScore(int value);
 
     inline void setScreen(glm::ivec2 _screenSize) { screenSize = _screenSize; }
 
@@ -25,6 +28,8 @@ public:
 
     inline char getScreenValue(const glm::ivec2& pos) { return *getScreenCase(pos); }
     bool setScreenValue(const glm::ivec2& pos, char value);
+
+
 
     inline void addObject(GameObject* obj) { objects.push_back(obj); };
     inline void addUpdater(Updater* obj) { updaters.push_back(obj); };
@@ -65,7 +70,7 @@ private:
     char defaultScreen;
 
     bool exit = false;
-
+    int score = 0;
     char input = 0;
     std::mutex inputMtx;
 };

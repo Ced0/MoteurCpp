@@ -110,6 +110,7 @@ void GameManager::updateThread()
 
 void GameManager::update()
 {
+    scoreDisplay();
     inputMtx.lock();
     char cpyInput = input;
     input = 0;
@@ -141,4 +142,14 @@ bool GameManager::setScreenValue(const glm::ivec2& pos, char value)
     }
 
     return false;
+}
+
+void GameManager::scoreDisplay() 
+{
+    std::cout << "Score: " << score;
+}
+
+void GameManager::addScore(int value)
+{
+    score += value;
 }
