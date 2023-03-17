@@ -92,6 +92,7 @@
     </ClCompile>
     <ClCompile Include="RenderUpdater.cpp">
       <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClCompile>
     <ClCompile Include="BonusSpawner.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
