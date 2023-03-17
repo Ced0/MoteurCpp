@@ -59,7 +59,7 @@ protected:
 
 private:
 
-    void gameObjectManagerUnitaryTest(uint32_t iteration);
+    //void gameObjectManagerUnitaryTest(uint32_t iteration);
 
     static GameManager* singleton;
 
@@ -69,7 +69,7 @@ private:
         {
             return (screen + pos.x * screenSize.y + pos.y);
         }
-        
+
         return NULL;
     }
 

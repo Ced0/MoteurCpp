@@ -11,8 +11,8 @@ void ObstacleSpawner::update(char input)
     {
         if (objects[i]->active == false)
         {
-            ((AsciiComponent*)objects[i]->components[0])->pos.x = 49;
-            ((AsciiComponent*)objects[i]->components[0])->pos.y = randInt(1, 19);
+            //((AsciiComponent*)objects[i]->components[0])->pos.x = 49;
+            //((AsciiComponent*)objects[i]->components[0])->pos.y = randInt(1, 19);
             objects[i]->active = true;
             cpt++;
         }

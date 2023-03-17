@@ -83,17 +83,24 @@ void GameObjectManager::updateTracker(const int id, const bool tracker)
 
 }
 
-int GameObjectManager::addComponent(const int id, ComponentEnum enumComponent, const int componentId)
+int GameObjectManager::addComponent(const int id,const ComponentEnum componentType, const int componentId)
 {
-	//if (id >= idPoolGameObjects.size() || id < 0)
-	//	return EXIT_FAILURE;
+	if (id >= poolGameObjects.size() || id < 0)
+		return EXIT_FAILURE;
 
-	//const int idxId = idPoolGameObjects[id];
-	//auto gameObject = poolGameObjects[idxId];
-	//gameObject.addComponent(component);
+	GameObject gameObject = poolGameObjects[id];
+	if (gameObject.hasComponent(componentType))
+		return EXIT_FAILURE;
 
-	//return EXIT_SUCCESS;
+	gameObject.addComponent(componentType, componentId);
+	return EXIT_SUCCESS;
 }
 
 int GameObjectManager::removeComponent(const int id, ComponentEnum enumComponent)
-{}
+{
+	if (id >= poolGameObjects.size() || id < 0)
+		return EXIT_FAILURE;
+
+	GameObject gameObject = poolGameObjects[id];
+	gameObject.removeComponent(enumComponent);
+}

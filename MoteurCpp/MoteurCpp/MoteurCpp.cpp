@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Scroller.h"
 #include "ObstacleSpawner.h"
+#include "BonusSpawner.h"
 
 int main()
 {
@@ -29,6 +30,7 @@ int main()
     }
 
     ObstacleSpawner spawner;
+    BonusSpawner bonus;
     Scroller scroller;
 
     for (int i = 0; i < (50*5); i++)
@@ -40,14 +42,19 @@ int main()
         spawner.addObject(obj);
         scroller.addObject(obj);
         game->addObject(obj);
+
+        obj = new AsciiObject('o');
+        bonus.addObject(obj);
     }
 
     Player player('O', glm::vec2(5, 10));
 
     game->addObject(&player);
     game->addUpdater(&scroller);
-    game->addUpdater(&spawner);
+    game->addUpdater(&spawner);    
+    game->addUpdater(&bonus);
 
+    player.active = true;
     game->start();
 
     while (game->getExit() == false)
