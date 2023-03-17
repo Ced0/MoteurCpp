@@ -11,6 +11,11 @@
 #include "TransformComponent.h"
 #include "PlayerBehavior.h"
 #include "RenderComponent.h"
+#include "PlayerBehavior.h"
+#include "PlayerUpdater.h"
+#include "RenderUpdater.h"
+#include "ScrollerUpdater.h"
+#include "SpawnerUpdater.h"
 
 GameManager* GameManager::singleton = nullptr;
 
@@ -179,16 +184,11 @@ void GameManager::update()
 {
     inputMtx.lock();
     clearScreen();
-
-    /*for (int i = 0; i < updaters.size(); i++)
-    {
-        updaters[i]->update(cpyInput);
-    }
-
-    for (int i = 0; i < objects.size(); i++)
-    {
-        if (objects[i]->active == true) objects[i]->update(cpyInput);
-    }*/
+    PlayerBehavior::Instance().update();
+    PlayerUpdater::Instance().update();
+    ScrollerUpdater::Instance().update();
+    SpawnerUpdater::Instance().update();
+    RenderUpdater::Instance().update();
     input = 0;
     inputMtx.unlock();
     display();
