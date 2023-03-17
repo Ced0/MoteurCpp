@@ -21,7 +21,8 @@ bool GameObject::hasComponent(const ComponentEnum componentType)
 
 void GameObject::addComponent(const ComponentEnum componentType, const int componentId)
 {
-	components.push_back(std::make_pair(componentType, componentId));
+	if(!hasComponent(componentType))
+		components.push_back(std::make_pair(componentType, componentId));
 }
 
 void GameObject::removeComponent(const ComponentEnum componentType)

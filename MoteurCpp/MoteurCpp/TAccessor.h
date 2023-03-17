@@ -10,10 +10,7 @@ class TAccessor
 private:
 	std::vector<T> components;
 
-	TAccessor<T>()
-	{
-		//components = std::vector<T>(MAX_COMPONENT)
-	}
+	TAccessor<T>() {};
 
 public:
 	static TAccessor<T>* Instance();

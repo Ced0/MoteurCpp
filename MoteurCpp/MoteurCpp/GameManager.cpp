@@ -36,7 +36,7 @@ void GameManager::initGameObjects()
 void GameManager::initPlayer()
 {
     auto newPair = std::make_pair(gameObjectManager->allocateGameObject(), GameObjectEnum::Player);
-    gameObjectManager->addComponent(newPair.first, ComponentEnum::TransformComponent, (new TransformComponent())->getId());
+    gameObjectManager->addComponent(newPair.first, ComponentEnum::TransformComponent, (new TransformComponent(2, 10, 0, 0, 0))->getId());
     gameObjectManager->addComponent(newPair.first, ComponentEnum::RenderComponent, (new RenderComponent())->getId());
     gameObjectManager->addComponent(newPair.first, ComponentEnum::PlayerBehavior, (new PlayerBehavior())->getId());
     gameObjects.push_back(newPair);
@@ -46,7 +46,7 @@ void GameManager::initObstacle(const int x, const int y)
 {
     for (int i = 0; i < x; i++)
     {
-        for (int j = 0; j < j; j++)
+        for (int j = 0; j < y; j++)
         {
             allocateNewObstacle(0, 0);
         }

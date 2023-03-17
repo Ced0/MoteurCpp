@@ -1,7 +1,7 @@
 #include "TransformComponent.h"
 #include "TAccessor.h"
 
-TransformComponent::TransformComponent()
+TransformComponent::TransformComponent() : Component()
 {
     this->position = glm::vec2(0, 0);
     this->rotation = 0.f;

@@ -12,6 +12,7 @@ float PlayerBehavior::playerMove(glm::vec2 playerPosition, char key)
         return playerPosition.y++;
     if(key == 's')
         return playerPosition.y--;
+    return playerPosition.y;
 }
 
 bool PlayerBehavior::isGameOver(char screenValue)

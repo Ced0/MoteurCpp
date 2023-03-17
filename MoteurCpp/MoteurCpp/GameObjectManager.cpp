@@ -91,11 +91,11 @@ int GameObjectManager::addComponent(const int id,const ComponentEnum componentTy
 	if (id >= poolGameObjects.size() || id < 0)
 		return EXIT_FAILURE;
 
-	GameObject gameObject = poolGameObjects[id];
-	if (gameObject.hasComponent(componentType))
+	GameObject* gameObject = &poolGameObjects[id];
+	if (gameObject->hasComponent(componentType))
 		return EXIT_FAILURE;
 
-	gameObject.addComponent(componentType, componentId);
+	gameObject->addComponent(componentType, componentId);
 	return EXIT_SUCCESS;
 }
 

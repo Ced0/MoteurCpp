@@ -13,6 +13,7 @@ RenderComponent::RenderComponent(char c) : Component()
 {
     this->render = c;
     this->active = false;
+    TAccessor<RenderComponent>::Instance()->Add(*this);
 }
 
 bool RenderComponent::isActive() 
