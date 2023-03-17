@@ -60,13 +60,7 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="IUpdater.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="TransformComponent.cpp">
-      <Filter>Fichiers sources\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="TAccessor.cpp">
       <Filter>Fichiers sources\Components</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
@@ -81,20 +75,23 @@
     <ClCompile Include="TransformUpdater.cpp">
       <Filter>Fichiers sources\Components</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerBehavior.cpp">
-      <Filter>Fichiers d%27en-tête\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerUpdater.cpp">
-      <Filter>Fichiers d%27en-tête\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderComponent.cpp">
-      <Filter>Fichiers d%27en-tête\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderUpdater.cpp">
-      <Filter>Fichiers d%27en-tête\Components</Filter>
-    </ClCompile>
     <ClCompile Include="BonusSpawner.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="IUpdater.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderComponent.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerUpdater.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderUpdater.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBehavior.cpp">
+      <Filter>Fichiers sources\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

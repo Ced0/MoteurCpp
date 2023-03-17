@@ -54,10 +54,12 @@ const glm::vec2 TransformComponent::getScale()
 
 void TransformComponent::setPositionX(float x)
 {
+    this->position.x = x;
 }
 
 void TransformComponent::setPositionY(float y)
 {
+    this->position.y = y;
 }
 
 void TransformComponent::setPosition(float x, float y)

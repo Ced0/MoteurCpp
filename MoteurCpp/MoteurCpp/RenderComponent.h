@@ -7,6 +7,8 @@ private:
     char render;
 
 public:
+    RenderComponent();
+
     RenderComponent(char c);
 
     char getRender();
