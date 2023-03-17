@@ -13,8 +13,8 @@ class GameObjectManager
 	};
 
 public:
-	static GameObjectManager* getInstance(const uint32_t poolSize);
-
+	static GameObjectManager* getInstance();
+	void init(const uint64_t& poolSize);
 	int allocateGameObject();
 	int deallocateGameObject(const int id, const bool tracker);
 	int addComponent(const int id, ComponentEnum componentType, const int componentId);
@@ -23,7 +23,7 @@ public:
 	int getComponent(const int id, ComponentEnum componentType);
 
 private:
-	GameObjectManager(const uint64_t& poolSize);
+	GameObjectManager();
 	GameObjectManager(const GameObjectManager& other) = delete;
 	~GameObjectManager();
 

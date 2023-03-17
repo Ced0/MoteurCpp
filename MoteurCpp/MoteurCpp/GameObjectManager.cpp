@@ -2,23 +2,26 @@
 
 #include <iostream>
 
-GameObjectManager* GameObjectManager::getInstance(const uint32_t poolSize)
+GameObjectManager* GameObjectManager::getInstance()
 {
-	static GameObjectManager* gameObjectManager = new GameObjectManager(poolSize);
+	static GameObjectManager* gameObjectManager = new GameObjectManager();
 	return gameObjectManager;
 }
 
-GameObjectManager::GameObjectManager(const uint64_t& poolSize)
+void GameObjectManager::init(const uint64_t& poolSize)
 {
 	poolGameObjects = std::vector<GameObject>(poolSize);
 	poolTracker = std::vector<Tracker>(poolSize);
 	for (unsigned int idx = 0; idx < poolSize; ++idx)
 	{
 		if (idx + 1 < poolSize)
-		poolTracker[idx].nextFree = idx + 1;
+			poolTracker[idx].nextFree = idx + 1;
 	}
 	currentFreeTracker = 0;
 }
+
+GameObjectManager::GameObjectManager()
+{}
 
 GameObjectManager::~GameObjectManager()
 {

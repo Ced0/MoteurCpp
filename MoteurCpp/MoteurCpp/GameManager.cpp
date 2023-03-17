@@ -13,7 +13,8 @@ GameManager* GameManager::singleton = nullptr;
 
 GameManager::GameManager()
 {
-    gameObjectManager = GameObjectManager::getInstance(POOL_SIZE);
+    gameObjectManager = GameObjectManager::getInstance();
+    gameObjectManager->init(POOL_SIZE);
 }
 
 void GameManager::start()
