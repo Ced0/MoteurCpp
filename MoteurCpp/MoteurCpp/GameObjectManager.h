@@ -17,8 +17,10 @@ public:
 
 	int allocateGameObject();
 	int deallocateGameObject(const int id, const bool tracker);
-	int addComponent(const int id, ComponentEnum enumComponent, const int componentId);
-	int removeComponent(const int id, ComponentEnum enumComponent);
+	int addComponent(const int id, ComponentEnum componentType, const int componentId);
+	int removeComponent(const int id, ComponentEnum componentType);
+	bool hasComponent(const int id, ComponentEnum componentType);
+	int getComponent(const int id, ComponentEnum componentType);
 
 private:
 	GameObjectManager(const uint64_t& poolSize);

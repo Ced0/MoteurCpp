@@ -26,16 +26,26 @@ void GameObject::addComponent(const ComponentEnum componentType, const int compo
 
 void GameObject::removeComponent(const ComponentEnum componentType)
 {
-	int i = 0;
-
-	for (int idx = 0; i < components.size(); ++i)
+	for (int idx = 0; idx < components.size(); ++idx)
 	{
-		if (components[i].first == componentType)
+		if (components[idx].first == componentType)
 		{
 			components.erase(components.begin() + idx);
 			return;
 		}
 	}
+}
+
+int GameObject::getComponent(const ComponentEnum componentType)
+{
+	for (int idx = 0; idx < components.size(); ++idx)
+	{
+		if (components[idx].first == componentType)
+		{
+			return components[idx].second;
+		}
+	}
+	return -1;
 }
 
 void GameObject::update(char a)

@@ -13,6 +13,7 @@ public:
 	bool hasComponent(const ComponentEnum componentType);
 	void addComponent(const ComponentEnum componentType, const int componentId);
 	void removeComponent(const ComponentEnum componentType);
+	int getComponent(const ComponentEnum componentType);
 	virtual void update(char a);
 
 	std::vector<std::pair<ComponentEnum, int>> components;

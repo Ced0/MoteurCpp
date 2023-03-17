@@ -96,11 +96,23 @@ int GameObjectManager::addComponent(const int id,const ComponentEnum componentTy
 	return EXIT_SUCCESS;
 }
 
-int GameObjectManager::removeComponent(const int id, ComponentEnum enumComponent)
+int GameObjectManager::removeComponent(const int id, ComponentEnum componentType)
 {
 	if (id >= poolGameObjects.size() || id < 0)
 		return EXIT_FAILURE;
 
 	GameObject gameObject = poolGameObjects[id];
-	gameObject.removeComponent(enumComponent);
+	gameObject.removeComponent(componentType);
+}
+
+bool GameObjectManager::hasComponent(const int id, ComponentEnum componentType)
+{
+	GameObject gameObject = poolGameObjects[id];
+	return gameObject.hasComponent(componentType);
+}
+
+int GameObjectManager::getComponent(const int id, ComponentEnum componentType)
+{
+	GameObject gameObject = poolGameObjects[id];
+	return gameObject.getComponent(componentType);
 }
