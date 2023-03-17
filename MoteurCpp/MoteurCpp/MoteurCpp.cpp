@@ -20,8 +20,8 @@ int main()
 
     for (int i = 0; i < 50; i++)
     {
-        game->addObject(new AsciiObject('X', glm::vec2(i, 0)));
-        game->addObject(new AsciiObject('X', glm::vec2(i, 19)));
+        //game->addObject(new AsciiObject('X', glm::vec2(i, 0)));
+        //game->addObject(new AsciiObject('X', glm::vec2(i, 19)));
     }
 
     ObstacleSpawner spawner;
@@ -36,7 +36,7 @@ int main()
 
         spawner.addObject(obj);
         scroller.addObject(obj);
-        game->addObject(obj);
+        //game->addObject(obj);
 
         obj = new AsciiObject('o');
         bonus.addObject(obj);
@@ -44,7 +44,7 @@ int main()
 
     Player player('O', glm::vec2(5, 10));
 
-    game->addObject(&player);
+    //game->addObject(&player);
     game->addUpdater(&scroller);
     game->addUpdater(&spawner);    
     game->addUpdater(&bonus);

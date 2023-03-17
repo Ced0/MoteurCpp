@@ -1,6 +1,7 @@
 #pragma once
 #include <glm.hpp>
 #include "GameObjectManager.h"
+#include "GameObjectEnum.h"
 #include "GameObject.h"
 #include "Updater.h"
 #include <mutex>
@@ -38,7 +39,7 @@ public:
 
     int getInput();
 
-    inline void addObject(GameObject* obj) { objects.push_back(obj); };
+    //inline void addObject(GameObject* obj) { objects.push_back(obj); };
     inline void addUpdater(Updater* obj) { updaters.push_back(obj); };
 
     inline void gameOver() { exit = true; };
@@ -59,7 +60,10 @@ protected:
 
 private:
 
-    //void gameObjectManagerUnitaryTest(uint32_t iteration);
+    void initGameObjects();
+    void initPlayer();
+    void initObstacle(const int obstaclesCounter);
+    void initWall(const int wallCounter);
 
     static GameManager* singleton;
 
@@ -73,7 +77,7 @@ private:
         return NULL;
     }
 
-    std::vector<GameObject*> objects;
+    std::vector<std::pair<int, GameObjectEnum>> gameObjects;
 
     std::vector<Updater*> updaters;
 
