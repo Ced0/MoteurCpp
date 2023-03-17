@@ -10,13 +10,12 @@ private:
 public:
 	ScrollerUpdater() {};
 
-	static ScrollerUpdater Instance()
+	static ScrollerUpdater* Instance()
 	{
 		static ScrollerUpdater singleton = ScrollerUpdater();
-		return singleton;
+		return &singleton;
 	}
 
 	void update();
-};
 };
 

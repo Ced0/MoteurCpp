@@ -13,6 +13,8 @@ public :
 	TransformComponent();
 
 	TransformComponent(float positionX, float positionY, float rotation, float scaleX, float scaleY);
+	
+	~TransformComponent() {};
 
 	const float getPositionX();
 

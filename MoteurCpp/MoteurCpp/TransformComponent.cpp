@@ -6,7 +6,7 @@ TransformComponent::TransformComponent()
     this->position = glm::vec2(0, 0);
     this->rotation = 0.f;
     this->scale = glm::vec2(0, 0);
-    TAccessor<TransformComponent>::Instance().Add(*this);
+    TAccessor<TransformComponent>::Instance()->Add(*this);
 }
 
 TransformComponent::TransformComponent(float positionX, float positionY, float rotation, float scaleX, float scaleY)
@@ -14,7 +14,7 @@ TransformComponent::TransformComponent(float positionX, float positionY, float r
     this->position = glm::vec2(positionX, positionY);
     this->rotation = rotation;
     this->scale = glm::vec2(scaleX, scaleY);
-    TAccessor<TransformComponent>::Instance().Add(*this);
+    TAccessor<TransformComponent>::Instance()->Add(*this);
 }
 
 const float TransformComponent::getPositionX()

@@ -1,9 +1,12 @@
 #include "RenderComponent.h"
+#include "TAccessor.h"
 
 RenderComponent::RenderComponent() : Component()
 {
     this->render = 'X';
     this->active = false;
+    TAccessor<RenderComponent>::Instance()->Add(*this);
+
 }
 
 RenderComponent::RenderComponent(char c) : Component()

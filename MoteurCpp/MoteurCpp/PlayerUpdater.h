@@ -12,10 +12,10 @@ private:
 public:
 	PlayerUpdater() {};
 
-	static PlayerUpdater Instance()
+	static PlayerUpdater* Instance()
 	{
 		static PlayerUpdater singleton = PlayerUpdater();
-		return singleton;
+		return &singleton;
 	}
 
 	void update();

@@ -12,10 +12,10 @@ private:
 public:
 	TransformUpdater() {};
 
-	static TransformUpdater Instance()
+	static TransformUpdater* Instance()
 	{
 		static TransformUpdater singleton = TransformUpdater();
-		return singleton;
+		return &singleton;
 	}
 
 	void update();

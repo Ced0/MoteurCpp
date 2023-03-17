@@ -6,8 +6,6 @@ class IUpdater
 public:
 	IUpdater() {};
 
-	virtual ~IUpdater() = 0;
-
 	virtual void update() = 0;
 };
 

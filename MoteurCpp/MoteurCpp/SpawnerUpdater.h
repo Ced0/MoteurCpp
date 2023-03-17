@@ -12,10 +12,10 @@ private:
 public:
 	SpawnerUpdater() {};
 
-	static SpawnerUpdater Instance()
+	static SpawnerUpdater* Instance()
 	{
 		static SpawnerUpdater singleton = SpawnerUpdater();
-		return singleton;
+		return &singleton;
 	}
 
 	void update();

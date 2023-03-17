@@ -11,10 +11,10 @@ private:
 public:
 	RenderUpdater() {};
 
-	static RenderUpdater Instance()
+	static RenderUpdater* Instance()
 	{
 		static RenderUpdater singleton = RenderUpdater();
-		return singleton;
+		return &singleton;
 	}
 
 	void update();

@@ -184,11 +184,10 @@ void GameManager::update()
 {
     inputMtx.lock();
     clearScreen();
-    PlayerBehavior::Instance().update();
-    PlayerUpdater::Instance().update();
-    ScrollerUpdater::Instance().update();
-    SpawnerUpdater::Instance().update();
-    RenderUpdater::Instance().update();
+    PlayerUpdater::Instance()->update();
+    ScrollerUpdater::Instance()->update();
+    SpawnerUpdater::Instance()->update();
+    RenderUpdater::Instance()->update();
     input = 0;
     inputMtx.unlock();
     display();

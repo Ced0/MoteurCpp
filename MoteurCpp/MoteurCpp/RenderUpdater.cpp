@@ -18,8 +18,7 @@ void RenderUpdater::update()
 		RenderComponent* renderComponent = renders->tryGetComponent(index);
 		if (renderComponent == nullptr) continue;
 		bool isActive = GameManager::getInstance()->setScreenValue(component->getPosition(), renderComponent->getRender());
-		if (!isActive)
-			gameObjectManager->deallocateGameObject(index, false);
+		renderComponent->setIsActive(isActive);
 
 	}
 }

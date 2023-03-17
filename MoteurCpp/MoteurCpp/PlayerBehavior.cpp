@@ -1,7 +1,9 @@
 #include "PlayerBehavior.h"
+#include "TAccessor.h"
 
 PlayerBehavior::PlayerBehavior() : Component()
 {
+    TAccessor<PlayerBehavior>::Instance()->Add(*this);
 }
 
 float PlayerBehavior::playerMove(glm::vec2 playerPosition, char key)
