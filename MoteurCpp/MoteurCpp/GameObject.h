@@ -14,6 +14,6 @@ public:
 	virtual void update(char a);
 
 	std::vector<Component*> components;
-	bool active = false;
+	bool active = true;
 };
 

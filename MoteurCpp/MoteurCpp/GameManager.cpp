@@ -129,6 +129,8 @@ void GameManager::update()
         if (objects[i]->active == true) objects[i]->update(cpyInput);
     }
 
+    score++;
+
     display();
 }
 

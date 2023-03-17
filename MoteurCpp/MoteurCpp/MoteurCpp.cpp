@@ -54,7 +54,6 @@ int main()
     game->addUpdater(&spawner);    
     game->addUpdater(&bonus);
 
-    player.active = true;
     game->start();
 
     while (game->getExit() == false)
