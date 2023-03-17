@@ -17,7 +17,6 @@ public:
 
     void start();
     void display();
-    void scoreDisplay();
 
     void addScore(int value);
 

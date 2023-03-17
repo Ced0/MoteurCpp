@@ -66,6 +66,8 @@ void GameManager::display()
         toDisplay += "\n";
     }
 
+    toDisplay += "Score: " + std::to_string(score) + "\n";
+
     std::cout << toDisplay;
 }
 
@@ -110,7 +112,6 @@ void GameManager::updateThread()
 
 void GameManager::update()
 {
-    scoreDisplay();
     inputMtx.lock();
     char cpyInput = input;
     input = 0;
@@ -142,11 +143,6 @@ bool GameManager::setScreenValue(const glm::ivec2& pos, char value)
     }
 
     return false;
-}
-
-void GameManager::scoreDisplay() 
-{
-    std::cout << "Score: " << score;
 }
 
 void GameManager::addScore(int value)
