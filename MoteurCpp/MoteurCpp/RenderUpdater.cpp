@@ -3,6 +3,7 @@
 #include "TransformComponent.h"
 #include "RenderComponent.h"
 #include "TAccessor.h"
+#include <iostream>
 
 void RenderUpdater::update()
 {
@@ -19,6 +20,5 @@ void RenderUpdater::update()
 		if (renderComponent == nullptr) continue;
 		bool isActive = GameManager::getInstance()->setScreenValue(component->getPosition(), renderComponent->getRender());
 		renderComponent->setIsActive(isActive);
-
 	}
 }

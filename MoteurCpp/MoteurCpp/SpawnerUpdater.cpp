@@ -13,21 +13,21 @@ void SpawnerUpdater::update()
 	TAccessor<RenderComponent>* renders = TAccessor<RenderComponent>::Instance();
 	TAccessor<TransformComponent>* transforms = TAccessor<TransformComponent>::Instance();
 
-	for (int i = 0; i < quantity; i++)
+	int i = 0;
+	for (unsigned int j = 0; j < renders->getComponentsSize() && i < quantity; j++)
 	{
-		for (unsigned int j = 0; j < renders->getComponentsSize(); j++)
+		RenderComponent* renderComponent = renders->getComponent(j);
+		if (renderComponent == nullptr) continue;
+		if (!renderComponent->isActive())
 		{
-			RenderComponent* renderComponent = renders->getComponent(j);
-			if (renderComponent == nullptr) continue;
-			if (!renderComponent->isActive())
-			{
-				int transformIndex = gameObjectManager->getComponent(renderComponent->getgoId(), ComponentEnum::TransformComponent);
-				if (transformIndex < 0) continue;
-				TransformComponent* transformComponent = transforms->tryGetComponent(transformIndex);
-				if (transformComponent == nullptr) continue;
-				transformComponent->setPosition(49, randInt(1, 19));
-				renderComponent->setIsActive(true);
-			}
+			int transformIndex = gameObjectManager->getComponent(renderComponent->getgoId(), ComponentEnum::TransformComponent);
+			if (transformIndex < 0) continue;
+			TransformComponent* transformComponent = transforms->tryGetComponent(transformIndex);
+			if (transformComponent == nullptr) continue;
+			transformComponent->setPosition(49, randInt(1, 19));
+			renderComponent->setIsActive(true);
+
+			i++;
 		}
 	}
 }
