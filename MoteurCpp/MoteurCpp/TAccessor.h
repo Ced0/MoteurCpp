@@ -2,7 +2,7 @@
 #include "Component.h"
 #include <vector>
 
-constexpr auto MAX_COMPONENT = 10000;
+constexpr auto MAX_COMPONENT = 3000;
 
 template<typename T>
 class TAccessor
@@ -17,7 +17,7 @@ private:
 	}
 
 public:
-	static TAccessor<T> Instance();
+	static TAccessor<T>* Instance();
 
 	T* getComponent(int index);
 
@@ -34,10 +34,10 @@ public:
 };
 
 template<typename T>
-inline TAccessor<T> TAccessor<T>::Instance()
+inline TAccessor<T>* TAccessor<T>::Instance()
 {
 	static TAccessor<T> singleton = TAccessor<T>();
-	return singleton;
+	return &singleton;
 }
 
 template<typename T>

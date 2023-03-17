@@ -6,6 +6,10 @@ class PlayerBehavior :
 {
 
 public:
+    PlayerBehavior();
+
+    ~PlayerBehavior() {};
+
     float playerMove(glm::vec2 playerPosition, char key);
 
     bool isGameOver(char screenValue);

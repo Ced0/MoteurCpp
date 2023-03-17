@@ -178,6 +178,9 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pos2D.cpp" />
     <ClCompile Include="Scroller.cpp" />
+    <ClCompile Include="ScrollerComponent.cpp" />
+    <ClCompile Include="ScrollerUpdater.cpp" />
+    <ClCompile Include="SpawnerUpdater.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
     <ClCompile Include="TransformComponent.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -198,6 +201,10 @@
     <ClInclude Include="PlayerUpdater.h" />
     <ClInclude Include="RenderComponent.h" />
     <ClInclude Include="RenderUpdater.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ScrollerComponent.h" />
+    <ClInclude Include="ScrollerUpdater.h" />
+    <ClInclude Include="SpawnerUpdater.h" />
     <ClInclude Include="TAccessor.h" />
     <ClInclude Include="AsciiComponent.h" />
     <ClInclude Include="AsciiObject.h" />

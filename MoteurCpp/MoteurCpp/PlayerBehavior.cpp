@@ -1,5 +1,9 @@
 #include "PlayerBehavior.h"
 
+PlayerBehavior::PlayerBehavior() : Component()
+{
+}
+
 float PlayerBehavior::playerMove(glm::vec2 playerPosition, char key)
 {
     if(key == 'z')
