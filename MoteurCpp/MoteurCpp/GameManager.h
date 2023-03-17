@@ -6,13 +6,7 @@
 #include "Updater.h"
 #include <mutex>
 
-#define POOL_SIZE 1500
-
-#ifdef _DEBUG // for unitary test
-#include <stdlib.h>
-#include <time.h>
-#define MAX_RANDOM(X) rand() % X
-#endif // _DEBUG
+#define POOL_SIZE 3000
 
 class GameManager
 {
@@ -62,9 +56,9 @@ private:
 
     void initGameObjects();
     void initPlayer();
-    void initObstacle(const int obstaclesCounter);
+    void initObstacle(const int x, const int y);
     void initWall(const int wallCounter);
-
+    void allocateNewObstacle(const int x, const int y);
     static GameManager* singleton;
 
     inline char* getScreenCase(const glm::ivec2& pos) {
