@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Component.h"
+#include "ComponentEnum.h"
 
 class GameObject
 {
@@ -12,7 +13,7 @@ public:
 	void addComponent(Component* componentAdded);
 	virtual void update(char a);
 
-	std::vector<Component*> components;
-	bool active = true;
+	std::vector<std::pair<ComponentEnum, int>> components;
+	bool active = false;
 };
 

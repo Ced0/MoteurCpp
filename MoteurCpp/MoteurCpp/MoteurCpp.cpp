@@ -13,9 +13,13 @@ int main()
 {
     ThreadPool* pool = ThreadPool::getInstance();
     pool->start();
-
     GameManager* game = GameManager::getInstance();
 
+#ifdef _DEBUG
+
+    game->unitaryTest();
+
+#else
     game->setScreen(glm::ivec2(50, 20));
     game->createScreen(' ');
 
@@ -57,6 +61,7 @@ int main()
     }
 
     std::cout << "\nGame over\n";
+#endif
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

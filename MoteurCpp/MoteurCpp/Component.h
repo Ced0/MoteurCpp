@@ -12,6 +12,7 @@ public:
 	Component();
 
 	Component(unsigned int goId);
+	~Component() {};
 
 	const unsigned int getId();
 
