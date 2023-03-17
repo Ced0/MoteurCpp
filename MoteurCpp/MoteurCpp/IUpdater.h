@@ -4,11 +4,11 @@
 class IUpdater
 {
 public:
-	IUpdater();
+	IUpdater() {};
 
 	virtual ~IUpdater() = 0;
 
-	virtual void SystemUpdate() = 0;
+	virtual void update() = 0;
 };
 
 

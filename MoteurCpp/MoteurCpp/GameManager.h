@@ -36,7 +36,7 @@ public:
     inline char getScreenValue(const glm::ivec2& pos) { return *getScreenCase(pos); }
     bool setScreenValue(const glm::ivec2& pos, char value);
 
-
+    int getInput();
 
     inline void addObject(GameObject* obj) { objects.push_back(obj); };
     inline void addUpdater(Updater* obj) { updaters.push_back(obj); };

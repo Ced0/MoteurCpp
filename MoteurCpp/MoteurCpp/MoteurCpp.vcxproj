@@ -163,6 +163,10 @@
     </ClCompile>
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="IUpdater.cpp" />
+    <ClCompile Include="PlayerBehavior.cpp" />
+    <ClCompile Include="PlayerUpdater.cpp" />
+    <ClCompile Include="RenderComponent.cpp" />
+    <ClCompile Include="RenderUpdater.cpp" />
     <ClCompile Include="TAccessor.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -193,6 +197,10 @@
   <ItemGroup>
     <ClInclude Include="ComponentEnum.h" />
     <ClInclude Include="IUpdater.h" />
+    <ClInclude Include="PlayerBehavior.h" />
+    <ClInclude Include="PlayerUpdater.h" />
+    <ClInclude Include="RenderComponent.h" />
+    <ClInclude Include="RenderUpdater.h" />
     <ClInclude Include="TAccessor.h" />
     <ClInclude Include="AsciiComponent.h" />
     <ClInclude Include="AsciiObject.h" />

@@ -19,7 +19,9 @@ private:
 public:
 	static TAccessor<T> Instance();
 
-	T tryGetComponent(int id);
+	T* getComponent(int index);
+
+	T* tryGetComponent(int id);
 
 	int getComponentsSize();
 
@@ -37,14 +39,20 @@ inline TAccessor<T> TAccessor<T>::Instance()
 }
 
 template<typename T>
-inline T TAccessor<T>::tryGetComponent(int id)
+inline T* TAccessor<T>::getComponent(int index)
+{
+	return &components[index];
+}
+
+template<typename T>
+inline T* TAccessor<T>::tryGetComponent(int id)
 {
 	for (int i = 0; i < components.size(); i++)
 	{
 		if (components[i].getId() == id)
-			return components[i];
+			return &components[i];
 	}
-	return NULL;
+	return nullptr;
 }
 
 template<typename T>

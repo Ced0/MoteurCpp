@@ -72,14 +72,26 @@
     <ClCompile Include="Component.cpp">
       <Filter>Fichiers sources\Components</Filter>
     </ClCompile>
-    <ClCompile Include="TransformUpdater.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Fichiers sources\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="GameObjectManager.cpp">
       <Filter>Fichiers sources\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformUpdater.cpp">
+      <Filter>Fichiers sources\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBehavior.cpp">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerUpdater.cpp">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderComponent.cpp">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderUpdater.cpp">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,11 +146,23 @@
     <ClInclude Include="IUpdater.h">
       <Filter>Fichiers d%27en-tête\Components</Filter>
     </ClInclude>
-    <ClInclude Include="TransformUpdater.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="ComponentEnum.h">
       <Filter>Fichiers sources\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformUpdater.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBehavior.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerUpdater.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderComponent.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderUpdater.h">
+      <Filter>Fichiers d%27en-tête\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

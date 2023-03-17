@@ -9,7 +9,6 @@ private:
 	
 
 
-
 public:
 	TransformUpdater() {};
 
@@ -19,6 +18,6 @@ public:
 		return singleton;
 	}
 
-	void SystemUpdate();
+	void update();
 };
 

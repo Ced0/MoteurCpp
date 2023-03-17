@@ -6,17 +6,20 @@ class Component
 private:
 	static unsigned int index;
 	unsigned int id;
-	unsigned int gameObjectId;
+	unsigned int goId;
 
 public:
 	Component();
 
-	Component(unsigned int goId);
+	Component(unsigned int index);
+
 	~Component() {};
 
 	const unsigned int getId();
 
-	const unsigned int getGameObjectId();
+	const unsigned int getgoId();
+
+	void setgoId(unsigned int id);
 
 	bool operator== (const Component& other) const;
 	

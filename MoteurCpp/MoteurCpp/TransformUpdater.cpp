@@ -1,6 +1,6 @@
 #include "TransformUpdater.h"
 
-void TransformUpdater::SystemUpdate()
+void TransformUpdater::update()
 {
 
 }

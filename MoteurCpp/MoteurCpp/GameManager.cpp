@@ -112,13 +112,12 @@ void GameManager::updateThread()
 void GameManager::update()
 {
     inputMtx.lock();
-    char cpyInput = input;
-    input = 0;
-    inputMtx.unlock();
+    
+    
 
     clearScreen();
 
-    for (int i = 0; i < updaters.size(); i++)
+    /*for (int i = 0; i < updaters.size(); i++)
     {
         updaters[i]->update(cpyInput);
     }
@@ -126,8 +125,9 @@ void GameManager::update()
     for (int i = 0; i < objects.size(); i++)
     {
         if (objects[i]->active == true) objects[i]->update(cpyInput);
-    }
-
+    }*/
+    input = 0;
+    inputMtx.unlock();
     display();
 }
 
@@ -142,6 +142,11 @@ bool GameManager::setScreenValue(const glm::ivec2& pos, char value)
     }
 
     return false;
+}
+
+int GameManager::getInput()
+{
+    return this->input;
 }
 
 void GameManager::unitaryTest()
