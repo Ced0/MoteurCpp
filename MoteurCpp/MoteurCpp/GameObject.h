@@ -13,7 +13,7 @@ public:
 	void addComponent(Component* componentAdded);
 	virtual void update(char a);
 
-	std::vector<std::pair<ComponentEnum, int>> components;
+	std::vector<Component*> components;
 	bool active = false;
 };
 

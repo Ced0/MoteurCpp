@@ -59,7 +59,7 @@ protected:
 
 private:
 
-    void gameObjectManagerUnitaryTest(uint32_t iteration);
+    //void gameObjectManagerUnitaryTest(uint32_t iteration);
 
     static GameManager* singleton;
 
