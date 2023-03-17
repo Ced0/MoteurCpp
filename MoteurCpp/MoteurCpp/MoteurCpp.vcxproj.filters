@@ -81,6 +81,9 @@
     <ClCompile Include="GameObjectManager.cpp">
       <Filter>Fichiers sources\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="BonusSpawner.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ThreadPool.h">
@@ -141,6 +144,9 @@
       <Filter>Fichiers d%27en-tête\Components</Filter>
     </ClInclude>
     <ClInclude Include="GameObjectEnum.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BonusSpawner.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
