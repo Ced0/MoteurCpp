@@ -9,9 +9,9 @@ private:
     bool active;
 
 public:
-    RenderComponent();
+    RenderComponent(int ogId);
 
-    RenderComponent(char c);
+    RenderComponent(char c, int ogId);
 
     ~RenderComponent() {};
 

@@ -1,7 +1,7 @@
 #include "PlayerBehavior.h"
 #include "TAccessor.h"
 
-PlayerBehavior::PlayerBehavior() : Component()
+PlayerBehavior::PlayerBehavior(int ogId) : Component(ogId)
 {
     TAccessor<PlayerBehavior>::Instance()->Add(*this);
 }

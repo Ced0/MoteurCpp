@@ -7,7 +7,7 @@ class ScrollerComponent :
 {
 
 public:
-    ScrollerComponent();
+    ScrollerComponent(int ogId);
 
     ~ScrollerComponent() {};
 

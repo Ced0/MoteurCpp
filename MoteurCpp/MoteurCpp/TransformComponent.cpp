@@ -1,7 +1,7 @@
 #include "TransformComponent.h"
 #include "TAccessor.h"
 
-TransformComponent::TransformComponent() : Component()
+TransformComponent::TransformComponent(int goId) : Component(goId)
 {
     this->position = glm::vec2(0, 0);
     this->rotation = 0.f;
@@ -9,7 +9,7 @@ TransformComponent::TransformComponent() : Component()
     TAccessor<TransformComponent>::Instance()->Add(*this);
 }
 
-TransformComponent::TransformComponent(float positionX, float positionY, float rotation, float scaleX, float scaleY) : Component()
+TransformComponent::TransformComponent(float positionX, float positionY, float rotation, float scaleX, float scaleY, int goId) : Component(goId)
 {
     this->position = glm::vec2(positionX, positionY);
     this->rotation = rotation;

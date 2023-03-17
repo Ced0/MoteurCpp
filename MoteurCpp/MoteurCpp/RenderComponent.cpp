@@ -1,7 +1,7 @@
 #include "RenderComponent.h"
 #include "TAccessor.h"
 
-RenderComponent::RenderComponent() : Component()
+RenderComponent::RenderComponent(int ogId) : Component(ogId)
 {
     this->render = 'X';
     this->active = false;
@@ -9,7 +9,7 @@ RenderComponent::RenderComponent() : Component()
 
 }
 
-RenderComponent::RenderComponent(char c) : Component()
+RenderComponent::RenderComponent(char c, int goId) : Component(goId)
 {
     this->render = c;
     this->active = false;

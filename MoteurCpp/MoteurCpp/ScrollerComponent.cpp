@@ -3,7 +3,7 @@
 
 
 
-ScrollerComponent::ScrollerComponent() : Component()
+ScrollerComponent::ScrollerComponent(int ogId) : Component(ogId)
 {
     TAccessor<ScrollerComponent>::Instance()->Add(*this);
 }

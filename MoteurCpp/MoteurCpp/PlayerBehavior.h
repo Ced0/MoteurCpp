@@ -6,7 +6,7 @@ class PlayerBehavior :
 {
 
 public:
-    PlayerBehavior();
+    PlayerBehavior(int ogId);
 
     ~PlayerBehavior() {};
 

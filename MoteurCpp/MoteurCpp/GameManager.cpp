@@ -36,9 +36,9 @@ void GameManager::initGameObjects()
 void GameManager::initPlayer()
 {
     auto newPair = std::make_pair(gameObjectManager->allocateGameObject(), GameObjectEnum::Player);
-    gameObjectManager->addComponent(newPair.first, ComponentEnum::TransformComponent, (new TransformComponent(2, 10, 0, 0, 0))->getId());
-    gameObjectManager->addComponent(newPair.first, ComponentEnum::RenderComponent, (new RenderComponent())->getId());
-    gameObjectManager->addComponent(newPair.first, ComponentEnum::PlayerBehavior, (new PlayerBehavior())->getId());
+    gameObjectManager->addComponent(newPair.first, ComponentEnum::TransformComponent, (new TransformComponent(2, 10, 0, 0, 0, newPair.first))->getId());
+    gameObjectManager->addComponent(newPair.first, ComponentEnum::RenderComponent, (new RenderComponent(newPair.first))->getId());
+    gameObjectManager->addComponent(newPair.first, ComponentEnum::PlayerBehavior, (new PlayerBehavior(newPair.first))->getId());
     gameObjects.push_back(newPair);
 }
 
@@ -59,8 +59,8 @@ void GameManager::initWall(const int wallCounter)
     {
         // top side wall
         auto newTopWall = std::make_pair(gameObjectManager->allocateGameObject(), GameObjectEnum::Wall);
-        gameObjectManager->addComponent(newTopWall.first, ComponentEnum::RenderComponent, (new RenderComponent('X'))->getId());
-        auto transformComponentTop = new TransformComponent();
+        gameObjectManager->addComponent(newTopWall.first, ComponentEnum::RenderComponent, (new RenderComponent('X', newTopWall.first))->getId());
+        auto transformComponentTop = new TransformComponent(newTopWall.first);
         transformComponentTop->setPositionX(i);
         transformComponentTop->setPositionY(0);
         gameObjectManager->addComponent(newTopWall.first, ComponentEnum::TransformComponent, transformComponentTop->getId());
@@ -68,8 +68,8 @@ void GameManager::initWall(const int wallCounter)
 
         // bot side wall
         auto newBottomWall = std::make_pair(gameObjectManager->allocateGameObject(), GameObjectEnum::Wall);
-        gameObjectManager->addComponent(newTopWall.first, ComponentEnum::RenderComponent, (new RenderComponent('X'))->getId());
-        auto transformComponentBottom = new TransformComponent();
+        gameObjectManager->addComponent(newTopWall.first, ComponentEnum::RenderComponent, (new RenderComponent('X', newBottomWall.first))->getId());
+        auto transformComponentBottom = new TransformComponent(newBottomWall.first);
         transformComponentBottom->setPositionX(i);
         transformComponentBottom->setPositionY(19);
         gameObjectManager->addComponent(newBottomWall.first, ComponentEnum::TransformComponent, transformComponentBottom->getId());
@@ -80,11 +80,11 @@ void GameManager::initWall(const int wallCounter)
 void GameManager::allocateNewObstacle(const int x, const int y)
 {
     auto newPair = std::make_pair(gameObjectManager->allocateGameObject(), GameObjectEnum::Obstacle);
-    auto transformComponent = new TransformComponent();
+    auto transformComponent = new TransformComponent(newPair.first);
     transformComponent->setPositionX(x);
     transformComponent->setPositionY(y);
     gameObjectManager->addComponent(newPair.first, ComponentEnum::TransformComponent, transformComponent->getId());
-    gameObjectManager->addComponent(newPair.first, ComponentEnum::RenderComponent, (new RenderComponent('X'))->getId());
+    gameObjectManager->addComponent(newPair.first, ComponentEnum::RenderComponent, (new RenderComponent('X', newPair.first))->getId());
     gameObjects.push_back(newPair);
 }
 

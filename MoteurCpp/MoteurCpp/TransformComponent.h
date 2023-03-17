@@ -10,9 +10,9 @@ private :
 	glm::vec2 scale;
 
 public : 
-	TransformComponent();
+	TransformComponent(int goId);
 
-	TransformComponent(float positionX, float positionY, float rotation, float scaleX, float scaleY);
+	TransformComponent(float positionX, float positionY, float rotation, float scaleX, float scaleY, int goId);
 	
 	~TransformComponent() {};
 
